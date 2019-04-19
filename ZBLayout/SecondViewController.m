@@ -7,12 +7,12 @@
 //
 
 #import "SecondViewController.h"
-#import "ZBViewProtocol.h"
-
+#import "ZBScrollView.h"
+#import "BannerViewModel.h"
 
 @interface SecondViewController ()
 
-@property (nonatomic, weak) UIView *myView;
+@property (nonatomic, weak) ZBScrollView *scrollView;
 
 @end
 
@@ -25,53 +25,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:view];
-    self.myView = view;
-    [view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        [layout setEnabled:YES];
-        layout.width = YGPointValue(200);
-        layout.height = YGPointValue(150);
-        layout.borderRadius = YGPercentValue(50);
-    }];
-    [view setLayoutFinish:^(__kindof UIView * _Nonnull v) {
-        v.backgroundColor = [UIColor greenColor];
-    }];
-    
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setTitle:@"关闭" forState:UIControlStateNormal];
-    btn.backgroundColor = [UIColor orangeColor];
-    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    btn.titleLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightRegular];
-    [btn addTarget:self
-            action:@selector(gobackpage)
-  forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    [btn configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        [layout setEnabled:YES];
-        layout.width = YGPercentValue(50);
-        layout.height = YGPointValue(40);
-        layout.marginTop = YGPointValue(20);
-    }];
-    
     [self.view configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
         [layout setEnabled:YES];
+        layout.flexDirection = YGFlexDirectionColumn;
+    }];
+    
+    ZBScrollView *scrollView = [ZBScrollView newDirection:ZBVertical];
+    [self.view addSubview:scrollView];
+    self.scrollView = scrollView;
+    [scrollView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
+        [layout setEnabled:YES];
+        layout.width = YGPercentValue(100);
+        layout.height = YGPointValue([UIScreen mainScreen].bounds.size.height);
+        layout.padding = YGPointValue(20);
+        layout.flexDirection = YGFlexDirectionColumn;
         layout.justifyContent = YGJustifyCenter;
         layout.alignItems = YGAlignCenter;
     }];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"aaa" ofType:@"jpg"];
-    UIImageView *imgView = [[UIImageView alloc] init];
-    imgView.image = [UIImage imageWithContentsOfFile:path];
-    [self.view addSubview:imgView];
-    [imgView configureLayoutWithBlock:^(YGLayout * _Nonnull layout) {
-        [layout setEnabled:YES];
-        layout.width = YGPointValue(200);
-        layout.aspectRatio = 3;
-        layout.marginTop = YGPointValue(10);
-        layout.borderRadius = YGPointValue(10);
-    }];
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (int i=0; i<30; i++) {
+        BannerViewModel *m = [[BannerViewModel alloc] init];
+        [arr addObject:m];
+    }
+    [scrollView reloadViewModels:arr];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"bbb" ofType:@"jpeg"];
+        BannerViewModel *m = [self.scrollView viewModelAtIndex:2];
+        m.img = [UIImage imageWithContentsOfFile:path];
+        [self.scrollView reload];
+        
+    });
     
 }
 

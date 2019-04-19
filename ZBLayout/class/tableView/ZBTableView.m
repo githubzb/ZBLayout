@@ -160,7 +160,8 @@ return headerFooter; \
     if (@available(iOS 11.0, *)) {
         [super safeAreaInsetsDidChange];
         CGFloat bottom = self.safeAreaInsets.bottom;
-        UIEdgeInsets safeInset = UIEdgeInsetsMake(0, 0, bottom, 0);
+        CGFloat top = self.safeAreaInsets.top;
+        UIEdgeInsets safeInset = UIEdgeInsetsMake(top, 0, bottom, 0);
         self.tableView.scrollIndicatorInsets = safeInset;
         self.tableView.contentInset = safeInset;
     }

@@ -21,7 +21,11 @@
 		6D38E731223F909400E056D7 /* UIBezierPath+ZBLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D38E730223F909400E056D7 /* UIBezierPath+ZBLayout.m */; };
 		6D38E737223F96DB00E056D7 /* ZBLRoundedRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D38E736223F96DB00E056D7 /* ZBLRoundedRect.m */; };
 		6D38E73A223F9A0A00E056D7 /* ZBLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D38E739223F9A0A00E056D7 /* ZBLayoutUtils.m */; };
+		6D5BC8E8226962C10096B496 /* bbb.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6D5BC8E7226962C10096B496 /* bbb.jpeg */; };
 		6D76C5F1226845D100C41EBC /* aaa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D76C5F0226845D100C41EBC /* aaa.jpg */; };
+		6D76C5F422686D3400C41EBC /* ZBScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D76C5F322686D3400C41EBC /* ZBScrollView.m */; };
+		6D76C5FB226889CC00C41EBC /* BannerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D76C5FA226889CC00C41EBC /* BannerViewModel.m */; };
+		6D76C5FE22688A6600C41EBC /* Banner.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D76C5FD22688A6600C41EBC /* Banner.m */; };
 		6D95DCA12266C10800F2AA80 /* ZBBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D95DCA02266C10800F2AA80 /* ZBBorderView.m */; };
 		6DB18E852260A0A40016B50C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB18E842260A0A40016B50C /* SecondViewController.m */; };
 		6DFD44172237BBB8003E332F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFD44162237BBB8003E332F /* AppDelegate.m */; };
@@ -61,7 +65,14 @@
 		6D38E736223F96DB00E056D7 /* ZBLRoundedRect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBLRoundedRect.m; sourceTree = "<group>"; };
 		6D38E738223F9A0A00E056D7 /* ZBLayoutUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBLayoutUtils.h; sourceTree = "<group>"; };
 		6D38E739223F9A0A00E056D7 /* ZBLayoutUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBLayoutUtils.m; sourceTree = "<group>"; };
+		6D5BC8E7226962C10096B496 /* bbb.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bbb.jpeg; sourceTree = "<group>"; };
 		6D76C5F0226845D100C41EBC /* aaa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aaa.jpg; sourceTree = "<group>"; };
+		6D76C5F222686D3400C41EBC /* ZBScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBScrollView.h; sourceTree = "<group>"; };
+		6D76C5F322686D3400C41EBC /* ZBScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBScrollView.m; sourceTree = "<group>"; };
+		6D76C5F9226889CC00C41EBC /* BannerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewModel.h; sourceTree = "<group>"; };
+		6D76C5FA226889CC00C41EBC /* BannerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewModel.m; sourceTree = "<group>"; };
+		6D76C5FC22688A6600C41EBC /* Banner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Banner.h; sourceTree = "<group>"; };
+		6D76C5FD22688A6600C41EBC /* Banner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Banner.m; sourceTree = "<group>"; };
 		6D95DC9F2266C10800F2AA80 /* ZBBorderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBBorderView.h; sourceTree = "<group>"; };
 		6D95DCA02266C10800F2AA80 /* ZBBorderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBBorderView.m; sourceTree = "<group>"; };
 		6DB18E832260A0A40016B50C /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
@@ -115,6 +126,7 @@
 		6D1434FD22391D0000B0E746 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				6D76C5F82268895800C41EBC /* scrollview */,
 				6D1434FE22391DB800B0E746 /* ListCell.h */,
 				6D1434FF22391DB800B0E746 /* ListCell.m */,
 				6D14350122391F9C00B0E746 /* MyListCellModel.h */,
@@ -140,6 +152,17 @@
 			path = style;
 			sourceTree = "<group>";
 		};
+		6D76C5F82268895800C41EBC /* scrollview */ = {
+			isa = PBXGroup;
+			children = (
+				6D76C5F9226889CC00C41EBC /* BannerViewModel.h */,
+				6D76C5FA226889CC00C41EBC /* BannerViewModel.m */,
+				6D76C5FC22688A6600C41EBC /* Banner.h */,
+				6D76C5FD22688A6600C41EBC /* Banner.m */,
+			);
+			path = scrollview;
+			sourceTree = "<group>";
+		};
 		6D95DC9D2266C08500F2AA80 /* tableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +185,8 @@
 			children = (
 				6D95DC9F2266C10800F2AA80 /* ZBBorderView.h */,
 				6D95DCA02266C10800F2AA80 /* ZBBorderView.m */,
+				6D76C5F222686D3400C41EBC /* ZBScrollView.h */,
+				6D76C5F322686D3400C41EBC /* ZBScrollView.m */,
 			);
 			path = customView;
 			sourceTree = "<group>";
@@ -187,6 +212,7 @@
 		6DFD44142237BBB8003E332F /* ZBLayout */ = {
 			isa = PBXGroup;
 			children = (
+				6D5BC8E7226962C10096B496 /* bbb.jpeg */,
 				6D76C5F0226845D100C41EBC /* aaa.jpg */,
 				6D1434FD22391D0000B0E746 /* demo */,
 				6DFD442B2237BD46003E332F /* class */,
@@ -285,6 +311,7 @@
 			files = (
 				6D76C5F1226845D100C41EBC /* aaa.jpg in Resources */,
 				6DFD44222237BBB9003E332F /* LaunchScreen.storyboard in Resources */,
+				6D5BC8E8226962C10096B496 /* bbb.jpeg in Resources */,
 				6DFD441F2237BBB9003E332F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +366,7 @@
 			files = (
 				6D0B83A8223A1CC00061FE3A /* ZBHeaderFooterDataSource.m in Sources */,
 				6D38E731223F909400E056D7 /* UIBezierPath+ZBLayout.m in Sources */,
+				6D76C5FB226889CC00C41EBC /* BannerViewModel.m in Sources */,
 				6D38E737223F96DB00E056D7 /* ZBLRoundedRect.m in Sources */,
 				6D1434F12238D11600B0E746 /* ZBDataSource.m in Sources */,
 				6D14350022391DB800B0E746 /* ListCell.m in Sources */,
@@ -346,6 +374,8 @@
 				6D1434F42238D24000B0E746 /* ZBViewModel.m in Sources */,
 				6D0B83AE223A27F10061FE3A /* HeaderFooterView.m in Sources */,
 				6DFD441A2237BBB8003E332F /* ViewController.m in Sources */,
+				6D76C5FE22688A6600C41EBC /* Banner.m in Sources */,
+				6D76C5F422686D3400C41EBC /* ZBScrollView.m in Sources */,
 				6D0B83AB223A27960061FE3A /* MyHeaderFooterModel.m in Sources */,
 				6DFD44252237BBB9003E332F /* main.m in Sources */,
 				6DB18E852260A0A40016B50C /* SecondViewController.m in Sources */,
